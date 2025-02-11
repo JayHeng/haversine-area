@@ -2,9 +2,10 @@
 # -*- coding: UTF-8 -*-
 import sys
 import os
+import math
 import time
 from PyQt5.Qt import *
-
+from haversine import haversine
 import matplotlib
 matplotlib.use("Qt5Agg")
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -13,6 +14,11 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 from win import haversineArea
+
+def herons_formula(a, b, c):
+    s = (a + b + c) / 2
+    area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+    return area
 
 class pointsFigure(FigureCanvas):
 
@@ -53,6 +59,11 @@ class areaMain(QMainWindow, haversineArea.Ui_Area):
         p3lat = float(self.lineEdit_p3lat.text())
         p4lat = float(self.lineEdit_p4lat.text())
 
+        p1 = (p1lat, p1long)
+        p2 = (p2lat, p2long)
+        p3 = (p3lat, p3long)
+        p4 = (p4lat, p4long)
+
         pLongs = [p1long, p2long, p3long, p4long, p1long, p3long]
         pLats = [p1lat, p2lat, p3lat, p4lat, p1lat, p3lat]
 
@@ -60,6 +71,22 @@ class areaMain(QMainWindow, haversineArea.Ui_Area):
         self.pointsFig.plotPoints(pLongs, pLats, labels)
         self.pointsGridlayout = QGridLayout(self.groupBox_points)
         self.pointsGridlayout.addWidget(self.pointsFig,0,0)
+
+        p1p2 = haversine(p1, p2, unit='m')
+        self.lineEdit_p1p2.setText("{:.3f}".format(p1p2) + 'm')
+        p2p3 = haversine(p2, p3, unit='m')
+        self.lineEdit_p2p3.setText("{:.3f}".format(p2p3) + 'm')
+        p3p4 = haversine(p3, p4, unit='m')
+        self.lineEdit_p3p4.setText("{:.3f}".format(p3p4) + 'm')
+        p4p1 = haversine(p4, p1, unit='m')
+        self.lineEdit_p4p1.setText("{:.3f}".format(p4p1) + 'm')
+        p1p3 = haversine(p1, p3, unit='m')
+        self.lineEdit_p1p3.setText("{:.3f}".format(p1p3) + 'm')
+
+        p1p2p3 = herons_formula(p1p2, p2p3, p1p3)
+        p1p3p4 = herons_formula(p1p3, p3p4, p4p1)
+        p1p2p3p4 = p1p2p3 + p1p3p4
+        self.lineEdit_area.setText("{:.3f}".format(p1p2p3p4) + 'm2')
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
