@@ -20,6 +20,12 @@ def herons_formula(a, b, c):
     area = math.sqrt(s * (s - a) * (s - b) * (s - c))
     return area
 
+def clear_layout(layout):
+    while layout.count():
+        child = layout.takeAt(0)
+        if child.widget():
+            child.widget().deleteLater()
+
 class pointsFigure(FigureCanvas):
 
     def __init__(self,width=5, height=4, dpi=100):
@@ -42,6 +48,7 @@ class areaMain(QMainWindow, haversineArea.Ui_Area):
         super(areaMain, self).__init__(parent)
         self.setupUi(self)
         self._register_callbacks()
+        self.pointsGridlayout = QGridLayout(self.groupBox_points)
 
     def _register_callbacks(self):
         self.pushButton_calc.clicked.connect(self.callbackCalc)
@@ -69,7 +76,7 @@ class areaMain(QMainWindow, haversineArea.Ui_Area):
 
         self.pointsFig = pointsFigure(width=1, height=1, dpi=50)
         self.pointsFig.plotPoints(pLongs, pLats, labels)
-        self.pointsGridlayout = QGridLayout(self.groupBox_points)
+        clear_layout(self.pointsGridlayout)
         self.pointsGridlayout.addWidget(self.pointsFig,0,0)
 
         p1p2 = haversine(p1, p2, unit='m')
