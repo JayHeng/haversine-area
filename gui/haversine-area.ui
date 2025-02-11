@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>586</width>
-    <height>207</height>
+    <height>237</height>
    </rect>
   </property>
   <property name="font">
@@ -85,6 +85,14 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>119.556864</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_p1lat">
     <property name="geometry">
@@ -94,6 +102,14 @@
       <width>91</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>33.380386</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_p2lat">
@@ -105,6 +121,14 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>33.380652</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_p2long">
     <property name="geometry">
@@ -114,6 +138,14 @@
       <width>91</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>119.556687</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_point2">
@@ -144,6 +176,14 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>33.381767</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_p3long">
     <property name="geometry">
@@ -153,6 +193,14 @@
       <width>91</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>119.558017</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_point3">
@@ -183,6 +231,14 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>33.381184</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_p4long">
     <property name="geometry">
@@ -192,6 +248,14 @@
       <width>91</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>119.558067</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_point4">
@@ -226,14 +290,19 @@
      <string>计算</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="groupBox_points">
     <property name="geometry">
      <rect>
       <x>280</x>
       <y>10</y>
       <width>291</width>
-      <height>181</height>
+      <height>211</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
     </property>
     <property name="title">
      <string>区域图示</string>
