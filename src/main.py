@@ -12,6 +12,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+from matplotlib.font_manager import FontProperties
 
 from win import haversineArea
 
@@ -28,12 +29,12 @@ def clear_layout(layout):
 
 class pointsFigure(FigureCanvas):
 
-    def __init__(self,width=5, height=4, dpi=100):
+    def __init__(self,width=5, height=4, dpi=100, font=None):
         self.fig = Figure(figsize=(width, height), dpi=dpi)
         super(pointsFigure,self).__init__(self.fig)
         self.axes = self.fig.add_subplot(111)
-        self.axes.set_xlabel('longitude')
-        self.axes.set_ylabel('latitude')
+        self.axes.set_xlabel('longitude, West -> East', fontproperties=font)
+        self.axes.set_ylabel('latitude, South -> North')
 
     def plotPoints(self, longs, lats, labels):
         self.axes.scatter(longs, lats)
@@ -48,10 +49,19 @@ class areaMain(QMainWindow, haversineArea.Ui_Area):
         super(areaMain, self).__init__(parent)
         self.setupUi(self)
         self._register_callbacks()
+        self.exeTopRoot = os.getcwd()
+        exeMainFile = os.path.join(self.exeTopRoot, 'src', 'main.py')
+        if not os.path.isfile(exeMainFile):
+            self.exeTopRoot = os.path.dirname(os.path.dirname(__file__))
+        self._setUserFont()
         self.pointsGridlayout = QGridLayout(self.groupBox_points)
 
     def _register_callbacks(self):
         self.pushButton_calc.clicked.connect(self.callbackCalc)
+
+    def _setUserFont( self ):
+        userFontPath = os.path.abspath(os.path.join(self.exeTopRoot, 'font', 'MicrogrammaDBolExt.ttf'))
+        self.font = FontProperties(fname=userFontPath)
 
     def callbackCalc(self):
         labels = ['p1', 'p2', 'p3', 'p4', 'p1', 'p3']
@@ -74,7 +84,7 @@ class areaMain(QMainWindow, haversineArea.Ui_Area):
         pLongs = [p1long, p2long, p3long, p4long, p1long, p3long]
         pLats = [p1lat, p2lat, p3lat, p4lat, p1lat, p3lat]
 
-        self.pointsFig = pointsFigure(width=1, height=1, dpi=50)
+        self.pointsFig = pointsFigure(width=1, height=1, dpi=60, font=self.font)
         self.pointsFig.plotPoints(pLongs, pLats, labels)
         clear_layout(self.pointsGridlayout)
         self.pointsGridlayout.addWidget(self.pointsFig,0,0)

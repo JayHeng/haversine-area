@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>663</width>
-    <height>290</height>
+    <width>758</width>
+    <height>358</height>
    </rect>
   </property>
   <property name="font">
@@ -281,7 +281,7 @@
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>220</y>
+      <y>160</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -295,8 +295,8 @@
      <rect>
       <x>320</x>
       <y>10</y>
-      <width>321</width>
-      <height>211</height>
+      <width>421</width>
+      <height>331</height>
      </rect>
     </property>
     <property name="font">
@@ -311,8 +311,8 @@
    <widget class="QLabel" name="label_p1p2">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>230</y>
+      <x>40</x>
+      <y>200</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -330,8 +330,8 @@
    <widget class="QLineEdit" name="lineEdit_p1p2">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>230</y>
+      <x>70</x>
+      <y>200</y>
       <width>71</width>
       <height>20</height>
      </rect>
@@ -348,8 +348,8 @@
    <widget class="QLineEdit" name="lineEdit_p2p3">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>230</y>
+      <x>180</x>
+      <y>200</y>
       <width>71</width>
       <height>20</height>
      </rect>
@@ -366,8 +366,8 @@
    <widget class="QLabel" name="label_p2p3">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>230</y>
+      <x>150</x>
+      <y>200</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -385,8 +385,8 @@
    <widget class="QLineEdit" name="lineEdit_p3p4">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>250</y>
+      <x>70</x>
+      <y>230</y>
       <width>71</width>
       <height>20</height>
      </rect>
@@ -403,8 +403,8 @@
    <widget class="QLabel" name="label_p3p4">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>250</y>
+      <x>40</x>
+      <y>230</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -422,8 +422,8 @@
    <widget class="QLineEdit" name="lineEdit_p4p1">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>250</y>
+      <x>180</x>
+      <y>230</y>
       <width>71</width>
       <height>20</height>
      </rect>
@@ -440,8 +440,8 @@
    <widget class="QLabel" name="label_p4p1">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>250</y>
+      <x>150</x>
+      <y>230</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -459,8 +459,8 @@
    <widget class="QLineEdit" name="lineEdit_p1p3">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>240</y>
+      <x>120</x>
+      <y>260</y>
       <width>71</width>
       <height>20</height>
      </rect>
@@ -477,8 +477,8 @@
    <widget class="QLabel" name="label_p1p3">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>240</y>
+      <x>90</x>
+      <y>260</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -497,7 +497,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>180</y>
+      <y>290</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -515,9 +515,9 @@
    <widget class="QLineEdit" name="lineEdit_area">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>180</y>
-      <width>191</width>
+      <x>80</x>
+      <y>290</y>
+      <width>201</width>
       <height>20</height>
      </rect>
     </property>
